@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Покупка животного и корма</title>
+</head>
+<body>
+
+  <script>
+    var name = prompt("Как вас зовут?");
+    alert("Привет, " + name);
+    document.write("Привет, " + name + "<br>");
+
+    var likesCats = confirm("Тебе нравятся кошки?");
+    if (likesCats) {
+      alert("Купи кошку!")
+      document.write("Купи кошку!<br>");
+    } else {
+      alert("Тогда купи собаку!")
+      document.write("Тогда купи собаку!<br>");
+    }
+    const CAT = [
+      { name: 'Мурка', price: 500, food: 'Whiskas' },
+      { name: 'Барсик', price: 600, food: 'Felix' },
+      { name: 'Том', price: 450, food: 'Sheba' },
+      { name: 'Леопольд', price: 700, food: 'Royal Canin' }
+    ];
+
+    const DOG = [
+      { name: 'Шарик', price: 800, food: 'Pedigree' },
+      { name: 'Рекс', price: 900, food: 'Chappi' },
+      { name: 'Белка', price: 750, food: 'Eukanuba' },
+      { name: 'Лайка', price: 1000, food: 'Purina Pro Plan' }
+    ];
+    var animalChoice = prompt("Выберите животное: 1 - кошка, 2 - собака");
+    if (animalChoice === '1') {
+      var catNames = CAT.map((cat, index) => `${index + 1}. ${cat.name}`).join('\n');
+      var chosenCatIndex = prompt(`Выберите кошку:\n${catNames}`);
+      chosenCatIndex = parseInt(chosenCatIndex) - 1;
+      var foodAmount = prompt(`Сколько корма (${CAT[chosenCatIndex].food}) нужно купить животному?`);
+      var totalCost = CAT[chosenCatIndex].price + foodAmount * 50;
+      document.write(`Стоимость кошки: ${CAT[chosenCatIndex].price} руб.\nСтоимость корма: ${foodAmount * 50} руб.\nОбщая стоимость: ${totalCost} руб.`);
+    } else if (animalChoice === '2') {
+      var dogNames = DOG.map((dog, index) => `${index + 1}. ${dog.name}`).join('\n');
+      var chosenDogIndex = prompt(`Выберите собаку:\n${dogNames}`);
+      chosenDogIndex = parseInt(chosenDogIndex) - 1;
+      var foodAmount = prompt(`Сколько корма (${DOG[chosenDogIndex].food}) нужно купить животному?`);
+      var totalCost = DOG[chosenDogIndex].price + foodAmount * 70;
+      document.write(`Стоимость собаки: ${DOG[chosenDogIndex].price} руб.\nСтоимость корма: ${foodAmount * 70} руб.\nОбщая стоимость: ${totalCost} руб.`);
+    } else {
+      alert("Некорректный выбор.");
+    }
+  </script>
+</body>
+</html>
