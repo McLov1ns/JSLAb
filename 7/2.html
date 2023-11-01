@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Определение, кто вы: кошка, собака или человек</title>
+</head>
+<body>
+  <script>
+    const CAT = ['Вишня', 'Тигресса', 'Пушистик', 'Черныш', 'Маруся', 'Снежок', 'Оскар', 'Мисси'];
+    const DOG = ['Бэлла', 'Барни', 'Джек', 'Хлоя', 'Макс', 'Лайла', 'Рокки', 'Софи'];
+    const вашеИмя = prompt('Введите ваше имя:');
+    if (CAT.includes(вашеИмя)) {
+      alert('Похоже, вы - кошка!');
+      window.open('https://www.google.com/search?sca_esv=578407962&q=cat&tbm=isch&source=univ&fir=eAP244UcF5wdYM%252CK6Qd9XWnQFQCoM%252C_%253BKl3KKhCsQyey_M%252CHkevFQZ5DYu7oM%252C_%253BiqNUK8so7yD7gM%252CV4qL_jTRbB2FuM%252C_%253BZgIVrLsbnFxV6M%252Cjd2eJKbW7kNabM%252C_%253B6Q6_EcSSvA4vgM%252CLzYsVRTUbhJ4pM%252C_%253BfnPiyfNHKk5EsM%252CfJFlkenrtbJEWM%252C_%253Bvegi6OA2mDnmDM%252CDChXEqOWYg6boM%252C_%253Boc0yOiQ9sK4GZM%252CfUaFTPQ4f7pyiM%252C_%253B4NNfyTkjCxCMKM%252CBvzzy2OOLWm60M%252C_%253B3I8uGDvVBXvNOM%252C9rMsr632qCnewM%252C_%253BMiL_vDyb2uQq4M%252CU9rY0DVDFh2pVM%252C_%253BSflCT1VW0LqPWM%252CUp42BlxidkdPvM%252C_&usg=AI4_-kRii3EMWUI6N8dk7QoGsZiL1NhCfw&sa=X&ved=2ahUKEwj43-CjoKKCAxX7FBAIHSfhA2YQjJkEegQIFRAC&biw=1280&bih=683&dpr=1.5', '_blank');
+    } else if (DOG.includes(вашеИмя)) {
+      alert('Похоже, вы - собака!');
+      window.open('https://www.google.com/search?q=%D1%81%D0%BE%D0%B1%D0%B0%D0%BA%D0%B0&sca_esv=578407962&tbm=isch&source=lnms&sa=X&ved=2ahUKEwj9-de_oKKCAxXoFBAIHWqwDQYQ_AUoAXoECAIQAw&biw=1280&bih=683&dpr=1.5', '_blank');
+    } else {
+      alert('Похоже, вы - человек!');
+      window.open('https://www.google.com/search?q=%D1%87%D0%B5%D0%BB%D0%B5%D0%B2%D0%B5%D0%BA&tbm=isch&ved=2ahUKEwiTgMzBoKKCAxU0GxAIHbEyCUMQ2-cCegQIABAA&oq=%D1%87%D0%B5%D0%BB%D0%B5%D0%B2%D0%B5%D0%BA&gs_lcp=CgNpbWcQAzIFCAAQgAQyCQgAEBgQgAQQCjIJCAAQGBCABBAKMgkIABAYEIAEEAoyCQgAEBgQgAQQCjIJCAAQGBCABBAKMgkIABAYEIAEEAoyCQgAEBgQgAQQCjIJCAAQGBCABBAKMgkIABAYEIAEEAo6CggAEIoFELEDEEM6CAgAEIAEELEDOgcIABCKBRBDOg0IABCKBRCxAxCDARBDOgQIABAeUMUKWIocYNkfaABwAHgAgAFziAGiBpIBAzUuM5gBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=__pBZdOENrS2wPAPseWkmAQ&bih=683&biw=1280', '_blank');
+    }
+  </script>
+</body>
+</html>
