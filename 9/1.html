@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Удвоение чисел</title>
+</head>
+<body>
+  <script>
+    function удвоитьЧисла(четные) {
+      var числа = [];
+      var начальноеЗначение = четные ? 2 : 1;
+
+      for (var i = 0; i < 10; i++) {
+        числа.push(начальноеЗначение);
+        начальноеЗначение += 2;
+      }
+
+      return числа;
+    }
+    var четные = confirm("Хотите удвоить четные числа?");
+    var результат = удвоитьЧисла(четные);
+    var типЧисел = четные ? "четные" : "нечетные";
+    alert(`Удвоенные ${типЧисел} числа: ${результат.join(", ")}`);
+  </script>
+</body>
+</html>

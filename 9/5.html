@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+    function fibonacci(n) {
+      if (n === 0) {
+        return 0;
+      } else if (n === 1) {
+        return 1;
+      }
+      else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+      }
+    }
+    var введенноеН = prompt("Введите число N для вычисления N-го числа Фибоначчи:");
+    введенноеН = parseInt(введенноеН);
+    if (!isNaN(введенноеН) && введенноеН >= 0) {
+      var результат = fibonacci(введенноеН);
+      alert(`N-е число Фибоначчи с индексом ${введенноеН} равно: ${результат}`);
+    } else {
+      alert("Пожалуйста, введите неотрицательное числовое значение.");
+    }
+  </script>
+  </body>
+</html>
