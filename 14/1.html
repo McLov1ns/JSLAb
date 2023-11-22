@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестирование</title>
+    <style>
+    </style>
+</head>
+<body>
+    <h1>Тест по теме: <span id="topic"></span></h1>
+    <div id="questions"></div>
+
+    <script>
+        var topics = [
+            "Космонавтика (60 лет космонавтике)",
+            "Информатика",
+            "Программирование на JS",
+            "Млекопитающие",
+            "Музыка",
+            "Кино",
+            "Автомобили"
+        ];
+
+        var selectedTopic = topics[Math.floor(Math.random() * topics.length)];
+        document.getElementById("topic").innerText = selectedTopic;
+        function runTest(topic) {
+            var questionsDiv = document.getElementById("questions");
+            questionsDiv.innerHTML = "";
+            for (let i = 1; i <= 10; i++) {
+                var question = document.createElement("div");
+                question.innerText = "Вопрос " + i + ": " + "Ваш ответ";
+                questionsDiv.appendChild(question);
+            }
+        }
+
+        runTest(selectedTopic);
+    </script>
+</body>
+</html>
