@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>лаб15</title>
+</head>
+<body>
+  <h1 id="main-heading">Привет, мир!</h1>
+  <h2 id="sub-heading">Дополнительный заголовок</h2>
+
+  <button onclick="changeHeadings()">Изменить заголовки</button>
+
+  <script>
+    function changeHeadings() {
+      var mainHeadingElement = document.getElementById("main-heading");
+      var subHeadingElement = document.getElementById("sub-heading");
+
+      console.log(mainHeadingElement.innerHTML);
+      console.log(subHeadingElement.innerHTML);
+
+      var newMainHeadingText = prompt("Введите новый текст для основного заголовка:");
+      var newSubHeadingText = prompt("Введите новый текст для дополнительного заголовка:");
+
+      mainHeadingElement.innerHTML = newMainHeadingText;
+      subHeadingElement.innerHTML = newSubHeadingText;
+    }
+  </script>
+</body>
+</html>

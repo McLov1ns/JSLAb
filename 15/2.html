@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Вывод массива</title>
+</head>
+<body>
+  <h1>Программа вывода массива</h1>
+
+  <label for="arrayType">Выберите тип массива:</label>
+  <select id="arrayType">
+    <option value="1D">Одномерный массив</option>
+    <option value="2D">Двумерный массив</option>
+  </select>
+  <button onclick="displayArray()">Вывести массив</button>
+  <script>
+    function displayArray() {
+      var arrayType = document.getElementById("arrayType").value;
+      if (arrayType === "1D") {
+        var oneDimensionalArray = [1, 2, 3, 4, 5];
+        alert("Одномерный массив: " + oneDimensionalArray.join(", "));
+      } else if (arrayType === "2D") {
+        var twoDimensionalArray = [
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]
+        ];
+        alert("Двумерный массив:\n" + twoDimensionalArray.map(row => row.join(", ")).join("\n"));
+      } else {
+        alert("Неверный выбор. Пожалуйста, выберите тип массива.");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Поэтический сайт</title>
+
+</head>
+<body>
+
+  <h1>Поэтический сайт</h1>
+
+  <label for="poetInput">Введите фамилию поэта:</label>
+  <input type="text" id="poetInput" placeholder="Например, Пушкин">
+  <button onclick="displayPoem()">Показать стихотворение</button>
+  <div id="poemOutput"></div>
+  <script>
+    function displayPoem() {
+      var poetInput = document.getElementById("poetInput").value;
+      var poemOutput = document.getElementById("poemOutput");
+      var poems = {
+        "Пушкин": "Я помню чудное мгновенье: Передо мной явилась ты...",
+        "Лермонтов": "Я памятник воздвиг себе нерукотворный...",
+        "Есенин": "Наши берега из зимы в весну,И с весны в зиму — далеко в путь...",
+        "Блок": "Ночь, улица, фонарь, аптека,Бессмысленный и тусклый свет..."
+      };
+
+      if (poems[poetInput]) {
+        poemOutput.textContent = poems[poetInput];
+      } else {
+        poemOutput.textContent = "Я не знаю такого поэта";
+      }
+    }
+  </script>
+</body>
+</html>
