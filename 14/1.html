@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тестирование</title>
-    <style>
-    </style>
+    <title>Генератор тестовых вопросов</title>
 </head>
 <body>
-    <h1>Тест по теме: <span id="topic"></span></h1>
-    <div id="questions"></div>
+    <h1>Генератор тестовых вопросов</h1>
+    <button onclick="generateQuestion()">Сгенерировать вопрос</button>
+    <p id="question"></p>
 
     <script>
         var topics = [
@@ -22,19 +21,30 @@
             "Автомобили"
         ];
 
-        var selectedTopic = topics[Math.floor(Math.random() * topics.length)];
-        document.getElementById("topic").innerText = selectedTopic;
-        function runTest(topic) {
-            var questionsDiv = document.getElementById("questions");
-            questionsDiv.innerHTML = "";
-            for (let i = 1; i <= 10; i++) {
-                var question = document.createElement("div");
-                question.innerText = "Вопрос " + i + ": " + "Ваш ответ";
-                questionsDiv.appendChild(question);
-            }
+        function generateQuestion() {
+            var randomTopic = topics[Math.floor(Math.random() * topics.length)];
+            var question = getQuestionByTopic(randomTopic);
+            document.getElementById("question").innerText = randomTopic + ": " + question;
         }
 
-        runTest(selectedTopic);
+        function getQuestionByTopic(topic) {
+            switch (topic) {
+                case "Космонавтика (60 лет космонавтике)":
+                    return "Как звали первого космонавта?";
+                case "Информатика":
+                    return "Что такое бит?";
+                case "Программирование на JS":
+                    return "Как создать массив в JavaScript?";
+                case "Млекопитающие":
+                    return "Какое млекопитающее является самым крупным на Земле?";
+                case "Музыка":
+                    return "Кто является автором 'Канона в ре мажор'?";
+                case "Кино":
+                    return "Какой фильм считается самым кассовым в истории кинематографа?";
+                case "Автомобили":
+                    return "Какой автомобиль считается самым продаваемым в истории?";
+            }
+        }
     </script>
 </body>
 </html>
